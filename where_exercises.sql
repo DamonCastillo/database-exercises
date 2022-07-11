@@ -14,7 +14,9 @@ AND RIGHT(last_name,1) IN ('E');
 
 
 SELECT * FROM employees WHERE last_name LIKE '%q%'
-AND last_name NOT LIKE '%qu%'
+AND last_name NOT LIKE '%qu%';
+
+
 
 
 
