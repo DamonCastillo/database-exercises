@@ -30,6 +30,15 @@ where dept_manager.to_date > curdate() AND s.to_date >curdate()
 order by departments.dept_name;
 
 
+select  concat(e.first_name, ' ', e.last_name), d.dept_name, concat(e2.first_name, ' ', e2.last_name)
+from employees as e
+join dept_emp de on e.emp_no = de.emp_no
+join departments d on de.dept_no = d.dept_no
+join dept_manager dm on d.dept_no = dm.dept_no
+join employees as e2 on dm.emp_no = e2.emp_no
+where YEAR(de.to_date) = 9999 and year(dm.to_date)= 9999
+order by dept_name and d.dept_no
+
 
 
 
