@@ -14,19 +14,12 @@ join titles t on e.emp_no = t.emp_no
 where first_name = 'Aamod'
 order by title;
 
-select e.first_name, e.last_name
-from employees as e
-where emp_no in (
+select first_name, last_name from employees where emp_no in (
     select emp_no
     from dept_manager
-        where dept_manager.emp_no in (
-            select employees.dept_manager.emp_no
-                from employees
-                where gender like ('F')
-
-            )
-
-    );
+    where gender = 'F'
+      AND to_date = '9999-01-01'
+);
 
 
 
